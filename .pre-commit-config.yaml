@@ -1,19 +1,19 @@
 repos:
   - repo: https://github.com/PyCQA/docformatter
-    rev: v1.7.5
+    rev: v1.7.8
     hooks:
       - id: docformatter
         args: [--in-place, --wrap-descriptions=79, --style=google]
   - repo: https://github.com/asottile/add-trailing-comma
-    rev: v3.1.0
+    rev: v4.0.0
     hooks:
       - id: add-trailing-comma
-  - repo: https://github.com/psf/black.git
-    rev: 24.4.0
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.5.1
     hooks:
       - id: black
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.5
+    rev: 1.9.1
     hooks:
       - id: nbqa-black
         name: nbqa-black
@@ -24,22 +24,22 @@ repos:
         types_or: [jupyter, markdown]
         additional_dependencies: [black]
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.2
+    rev: v3.21.2
     hooks:
       - id: pyupgrade
         args: [--py39-plus]
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 9.0.1
     hooks:
       - id: isort
   - repo: https://github.com/adamchainz/blacken-docs
-    rev: 1.16.0
+    rev: 1.20.0
     hooks:
       - id: blacken-docs
         additional_dependencies:
           - black==24.2.0
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.5
+    rev: 1.9.1
     hooks:
       - id: nbqa-pyupgrade
         name: nbqa-pyupgrade
@@ -59,7 +59,7 @@ repos:
         additional_dependencies: [isort]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -69,7 +69,7 @@ repos:
       - id: requirements-txt-fixer
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.4.3
     hooks:
       - id: codespell
         additional_dependencies:
@@ -79,7 +79,7 @@ repos:
           - --ignore-regex=[A-Za-z0-9+/]{100,}
           - --skip=*.js,*.html,*.css,*.svg",*.json,*.png,*.jpg,*.yml,*.yaml
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.5
+    rev: 1.9.1
     hooks:
       - id: nbqa-flake8
         args:
@@ -97,7 +97,7 @@ repos:
           - flake8-functions-names
 
   - repo: https://github.com/PyCQA/flake8
-    rev: 7.0.0
+    rev: 7.3.0
     hooks:
       - id: flake8
         args:
@@ -109,7 +109,7 @@ repos:
           - flake8-functions-names
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.5
+    rev: 1.9.1
     hooks:
       - id: nbqa-mypy
         name: nbqa-mypy
@@ -154,7 +154,7 @@ repos:
 
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.9.0
+    rev: v2.3.1
     hooks:
       - id: mypy
         args:
@@ -192,7 +192,7 @@ repos:
           - types-setuptools
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.5
+    rev: 1.9.1
     hooks:
       - id: nbqa-pylint
         name: nbqa-pylint
@@ -209,7 +209,7 @@ repos:
           - --disable=E0401,W0104,R0903
 
   - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.3.1
+    rev: v3.0.0a5
     hooks:
       - id: pylint
         name: pylint
@@ -226,7 +226,7 @@ repos:
         additional_dependencies: [pylint]
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.5
+    rev: 1.9.1
     hooks:
       - id: nbqa-pydocstyle
         name: nbqa-pydocstyle
